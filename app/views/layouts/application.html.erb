@@ -5,10 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="assets/jquery.nicescroll.min.js"></script>
+  <script>
+    $(document).ready(
+      function() {
+        $("html").niceScroll();
+        $("html").getNiceScroll().hide();
+      }
+    );
+  </script>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="my-fluid-container" id="thisdiv">
+  <%= yield %>
+</div>
 </body>
 </html>

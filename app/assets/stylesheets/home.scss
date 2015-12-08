@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inside_left{
+  float: left
+}
+
+.inside_right{
+  float: right
+}
+
+.hr{
+  width: 15%;
+  height: 1px;
+  background-color: black;
+  opacity: 0.3
+}
+
+.center-block {float: none !important}
+
+.float-none {
+  float: none;
+  display: inline-block;
+}
+
+img{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
