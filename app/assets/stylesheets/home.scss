@@ -11,10 +11,11 @@
 }
 
 .hr{
-  width: 15%;
-  height: 1px;
+  width: 95px;
+  height: 2px;
   background-color: black;
-  opacity: 0.3
+  margin-top: 0px;
+  opacity: 0.7;
 }
 
 .center-block {float: none !important}
@@ -64,6 +65,13 @@
   color: white;
 }
 
+.fPin{
+  background-color: rgb(239,56,53);
+}
+
+.fW{
+  background-color: white;
+}
 @media(min-width:768px) {
     .navbar-default {
         font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
