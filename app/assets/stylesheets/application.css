@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
  @import "font-awesome-sprockets";
@@ -22,4 +23,11 @@
    padding-right: 0;
    margin-left: auto;
    margin-right: auto;
+}
+
+.posLogo{
+  position:fixed;
+  top:81%;
+  /*left: 0.5%;*/
+  left: 91.5%;
 }
