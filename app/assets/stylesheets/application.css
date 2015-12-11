@@ -12,11 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 
- @import "font-awesome";
  @import "font-awesome-sprockets";
+ @import "font-awesome";
 
  .my-fluid-container {
    padding-left: 0;
