@@ -19,6 +19,7 @@ gem 'sass', '~> 3.4', '>= 3.4.19'
 gem 'carrierwave'
 gem 'mini_magick', :require => 'mini_gmagick'
 gem 'fog'
+gem 'jquery-turbolinks'
 
 gem 'simple_form'
 
