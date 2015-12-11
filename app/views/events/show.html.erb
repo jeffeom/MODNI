@@ -1,0 +1,29 @@
+<div class="text-center wrapper" id="startchange">
+  <img src="/assets/home.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
+</div>
+<div class="col-md-10 center-block">
+  <h1><%= @event.title %></h1>
+  <p><%= @event.event_date %></p>
+  <p><%= @event.body %></p>
+
+
+  <% if @event.image.present? %>
+    <%# .url is a method from the CarrierWave Gem that will return the URL of the
+        uploaded image. %>
+  <%= image_tag @event.image.url(:medium) %>
+  <% end %>
+
+
+  <h2>Submit Comments</h2>
+
+        <%#= render "/comments/form" %>
+
+  <h2>Comments</h2>
+        <!-- <%#= render @q.answers %>
+        <div id="comments">
+        <%# @post.comments.each do |comment| %>
+        <%# this will render _answer.html.erb inside views/answers folder %>
+        <%#= render "/comments/comment", comment: comment %>
+        <%# end %>
+      </div> -->
+  </div>

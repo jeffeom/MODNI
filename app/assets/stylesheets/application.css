@@ -12,4 +12,95 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+ @import "font-awesome";
+ @import "font-awesome-sprockets";
+
+ .my-fluid-container {
+   padding-left: 0;
+   padding-right: 0;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.posLogo{
+  position:fixed;
+  top:92%;
+  left: 91.5%;
+}
+
+@media(max-width:2700px){
+  .posLogo{
+    left: 95%;
+  }
+}
+
+@media(max-width:2000px){
+  .posLogo{
+    left: 93%;
+  }
+}
+
+@media(max-width:1500px){
+  .posLogo{
+    left: 91%;
+  }
+}
+
+@media(max-width:1300px){
+  .posLogo{
+    left: 90%;
+  }
+}
+@media(max-width:1030px){
+  .posLogo{
+    left: 88%;
+  }
+}
+@media(max-width:853px){
+  .posLogo{
+    left: 86%;
+  }
+}
+@media(max-width:736px){
+  .posLogo{
+    left: 84%;
+  }
+}
+@media(max-width:638px){
+  .posLogo{
+    left: 82%;
+  }
+}
+@media(max-width:570px){
+  .posLogo{
+    left: 77%;
+  }
+}
+@media(min-height:0px){
+  .posLogo{
+    top: 78%;
+  }
+}
+@media(min-height:580px){
+  .posLogo{
+    top: 81%;
+  }
+}
+@media(min-height:663px){
+  .posLogo{
+    top: 84%;
+  }
+}
+@media(min-height:768px){
+  .posLogo{
+    top: 86%;
+  }
+}
+@media(min-height:1280px){
+  .posLogo{
+    top: 90%;
+  }
+}
