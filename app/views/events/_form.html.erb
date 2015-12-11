@@ -1,0 +1,11 @@
+<%= simple_form_for @event do |f| %>
+  <%= f.input :event_date %>
+  <%= f.input :title, placeholder: "at least 3 characters.." %>
+  <%= f.input :body, hint: "Put Details for the Event" %>
+  <%= f.input :image %>
+  <%#= f.file_field :image %>
+  <%#= file_field_tag :image %>
+  <br>
+
+  <%= f.submit({class: "btn btn-primary"}) %>
+<% end %>

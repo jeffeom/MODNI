@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "home#index"
 
+  resources :events
+
   get '/about' => "home#about"
   get '/member' => "home#member"
   # The priority is based upon order of creation: first created -> highest priority.

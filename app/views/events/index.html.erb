@@ -1,0 +1,18 @@
+<div class="text-center wrapper" id="startchange">
+  <img src="/assets/home.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
+</div>
+
+<div class="col-md-10 center-block">
+  <div class="text-center">
+    <a class="btn btn-lg btn-default" href="<%= new_event_path  %>">Create New Event!</a>
+    <br>
+    <br>
+  </div>
+
+  <h1>All Events</h1>
+  <% @events.each do |event| %>
+    <div class="well">
+      <%= link_to event.title, event_path(event) %>
+    </div>
+  <% end %>
+</div>

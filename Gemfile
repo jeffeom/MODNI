@@ -17,7 +17,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'sass', '~> 3.4', '>= 3.4.19'
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'mini_magick', :require => 'mini_gmagick'
 gem 'fog'
 
 gem 'simple_form'

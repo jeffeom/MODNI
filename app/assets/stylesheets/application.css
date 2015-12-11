@@ -15,8 +15,8 @@
  *= require font-awesome
  */
 
- @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import "font-awesome-sprockets";
 
  .my-fluid-container {
    padding-left: 0;
