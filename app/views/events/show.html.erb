@@ -1,22 +1,25 @@
 <div class="text-center wrapper" id="startchange">
   <img src="/assets/home.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
 </div>
+<section class="col-md-12 center-block" id="event">
 <div class="col-md-10 center-block">
-  <h1><%= @event.title %></h1>
-  <p><%= @event.event_date %></p>
-  <p><%= @event.body %></p>
-
-
+  <h1 style="font-weight: 800; font-size: 50px"><%= @event.title %></h1>
+  <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @event.event_date %></h2>
+</div>
   <% if @event.image.present? %>
-    <%# .url is a method from the CarrierWave Gem that will return the URL of the
-        uploaded image. %>
-  <%= image_tag @event.image.url(:medium) %>
+  <div>
+    <%= image_tag(@event.image.url(:large), :class=> "event_image") %>
+  </div>
   <% end %>
+<div class="col-md-10 center-block">
+  <p style="font-weight: 600; display: inline-block"><%= @event.body %></p>
 
 
+
+  <div style="clear: left">
   <h2>Submit Comments</h2>
 
-        <%#= render "/comments/form" %>
+    <%#= render "/comments/form" %>
 
   <h2>Comments</h2>
         <!-- <%#= render @q.answers %>
@@ -27,3 +30,5 @@
         <%# end %>
       </div> -->
   </div>
+</div>
+<section>
