@@ -2,8 +2,7 @@
   <%= f.input :vlog_date %>
   <%= f.input :title, placeholder: "at least 3 characters.." %>
   <%= f.input :body, hint: "Put Details for the Vlog" %>
-  <%#= f.file_field :image %>
-  <%#= file_field_tag :image %>
+  <%= f.input :link, hint: "Put Youtube Link for the Vlog" %>
   <br>
 
   <%= f.submit({class: "btn btn-primary"}) %>

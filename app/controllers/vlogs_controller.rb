@@ -44,7 +44,7 @@ class VlogsController < ApplicationController
   private
 
   def vlog_params
-    vlog_params = params.require(:vlog).permit([:title, :body, :vlog_date, :user_id])
+    vlog_params = params.require(:vlog).permit([:title, :body, :link, :vlog_date, :user_id])
   end
 
   def find_vlog

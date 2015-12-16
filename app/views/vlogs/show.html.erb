@@ -22,20 +22,24 @@
 </section>
 
 
-<section class="col-md-12" id="vlog-title">
+<section id="vlog-title">
   <div class="col-md-12" style="text-align: center; margin-bottom: 50px">
     <h1 style="font-weight: 800; font-size: 50px"><%= @vlog.title %></h1>
     <% if @vlog.vlog_date %>
-      <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @vlog.vlog_date.strftime("%A, %B %d %Y @ %I:%M%p") %></h2>
+      <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @vlog.vlog_date.strftime("%A, %B %d %Y") %></h2>
     <% end %>
   </div>
 </section>
 
-<section class="col-md-10 center-block" id="image-body">
-  <div class="col-md-3 center-block well right" style="display: inline-block;">
-    <p style="font-weight: 600; opacity: 0.8"><%= @vlog.body %></p>
+<section class="col-md-10 center-block" id="video-body">
+  <div class="col-md-7 embed-container left">
+    <%= embed(@vlog.link) %>
   </div>
-  <section id="edit-delete">
+  <div class="col-md-3 well right">
+    <p style="font-weight: 600; opacity: 0.8"><%= @vlog.body %></p>
+    <br>
+  </div>
+  <section id="edit-delete" class="col-md-3 right" style="padding: 0">
     <%# if user_signed_in? && @post.user == current_user %>
     <%= link_to "Edit", edit_vlog_path(@vlog),
         class: "btn btn-info btn-sm edit-right"%>
@@ -45,7 +49,7 @@
   </section>
 </section>
 
-<section id="comments">
+<section id="comments" style="clear: both; display: block">
   <div class="col-md-10 center-block">
     <div style="clear: left">
       <br>

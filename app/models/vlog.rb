@@ -5,4 +5,5 @@ class Vlog < ActiveRecord::Base
 
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
+  validates :link, presence: true, uniqueness: true
 end
