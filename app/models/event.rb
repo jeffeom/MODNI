@@ -7,4 +7,12 @@ class Event < ActiveRecord::Base
   validates :body, presence: true
 
   mount_uploader :image, ImageUploader
+
+  def next
+    Event.where(["id < ?", id]).last
+  end
+
+  def previous
+    Event.where(["id > ?", id]).first
+  end
 end

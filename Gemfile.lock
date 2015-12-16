@@ -404,6 +404,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   letter_opener
   mini_magick
   pg

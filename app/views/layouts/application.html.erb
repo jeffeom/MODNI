@@ -7,9 +7,12 @@
     </head>
     <body>
       <div class="my-fluid-container" id="thisdiv">
-        <%= render "/layouts/flash_messages" %>
         <%= render "/layouts/nav" %>
         <%= yield %>
+        <br>
+        <br>
+        <br>
+        <%= render "/layouts/flash_messages" %>
         <a class="posLogo" href="/#page-top">
           <img alt="Brand" src="/assets/circle_logo.png" class="logoBot">
         </a>
@@ -22,7 +25,7 @@
     $(document).ready(
       function() {
         $("html").niceScroll();
-        $("html").getNiceScroll().hide();
+        // $("html").getNiceScroll().hide();
       }
     );
     </script>

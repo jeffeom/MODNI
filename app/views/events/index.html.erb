@@ -3,16 +3,39 @@
 </div>
 
 <div class="col-md-10 center-block">
-  <div class="text-center">
+  <div class="text-center" style="margin: 50px">
     <a class="btn btn-lg btn-default" href="<%= new_event_path  %>">Create New Event!</a>
-    <br>
-    <br>
   </div>
 
-  <h1>All Events</h1>
-  <% @events.each do |event| %>
-    <div class="well">
-      <%= link_to event.title, event_path(event) %>
+  <% @events.order("created_at DESC").each do |event| %>
+    <div class="col-md-4 grow" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+      <!-- <div class="col-md-3 cover-left" style="color: brown; font-weight: 800"> -->
+      <div class="col-md-3 cover-left date text-center" style="display: inline-block">
+        <% if event.event_date %>
+          <p><%= event.event_date.strftime("%A %B %dth")%></p>
+        <% end %>
+      </div>
+      <div class="col-md-9 cover-right">
+        <div style="display: block; font-weight: 900">
+          <%= link_to event.title, event_path(event) %>
+        </div>
+        <!-- <hr class="b-hr"> -->
+        <hr style="margin-bottom: 0; margin-top: 30px;">
+        <br>
+      </div>
+      <div class="col-md-12 text-center">
+        <% if event.image.present? %>
+          <% image = image_tag(event.image.url(:large), :class=> "event_cover") %>
+          <%= link_to image, event_path(event) %>
+        <% else %>
+          <div class="no-image">
+            <span>Image Cannot be Found</span>
+          </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
+  <div class="text-center" style="clear: both">
+    <%= paginate @events %>
+  </div>
 </div>

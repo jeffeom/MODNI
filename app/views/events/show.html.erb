@@ -1,34 +1,63 @@
 <div class="text-center wrapper" id="startchange">
   <img src="/assets/home.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
 </div>
-<section class="col-md-12 center-block" id="event">
-<div class="col-md-10 center-block">
-  <h1 style="font-weight: 800; font-size: 50px"><%= @event.title %></h1>
-  <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @event.event_date %></h2>
-</div>
-  <% if @event.image.present? %>
-  <div>
-    <%= image_tag(@event.image.url(:large), :class=> "event_image") %>
+
+<section class="col-md-10 center-block" id="event-skip">
+  <div style="float: right">
+    <% if @event.next %>
+      <%= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @event.next %>
+    <% end %>
   </div>
-  <% end %>
-<div class="col-md-10 center-block">
-  <p style="font-weight: 600; display: inline-block"><%= @event.body %></p>
-
-
-
-  <div style="clear: left">
-  <h2>Submit Comments</h2>
-
-    <%#= render "/comments/form" %>
-
-  <h2>Comments</h2>
-        <!-- <%#= render @q.answers %>
-        <div id="comments">
-        <%# @post.comments.each do |comment| %>
-        <%# this will render _answer.html.erb inside views/answers folder %>
-        <%#= render "/comments/comment", comment: comment %>
-        <%# end %>
-      </div> -->
+  <div style="float: right; margin-right: 10px">
+    <% if @event.previous %>
+      <%= link_to "<i class='fa fa-arrow-left fa-3x'></i>".html_safe, @event.previous %>
+    <% end %>
   </div>
-</div>
+  <div style="float: left; padding-top: 3px">
+    <%= link_to '<i class="fa fa-th fa-3x"></i>'.html_safe, events_path %>
+  </div>
+  <br>
+  <br>
+  <br>
+</section>
+
+<section class="col-md-12" id="event-title">
+  <div class="col-md-12" style="text-align: center; margin-bottom: 50px">
+    <h1 style="font-weight: 800; font-size: 50px"><%= @event.title %></h1>
+    <% if @event.event_date %>
+      <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @event.event_date.strftime("%A, %B %d %Y @ %I:%M%p") %></h2>
+    <% end %>
+  </div>
+</section>
+<section class="col-md-10 center-block" id="image-body">
+  <div class="col-md-7 text-center left">
+    <% if @event.image.present? %>
+      <%= image_tag(@event.image.url(:large), :class=> "event_image") %>
+    <% end %>
+  </div>
+  <div class="col-md-3 center-block well right" style="display: inline-block;">
+    <p style="font-weight: 600; opacity: 0.8"><%= @event.body %></p>
+  </div>
+</section>
+  <div class="col-md-10 center-block">
+    <div style="clear: left">
+      <br>
+      <br>
+      <hr>
+      <h2>Leave a Comment</h2>
+
+      <%#= render "/comments/form" %>
+
+      <% if @event.comments.present?%>
+      <h2>Comments</h2>
+          <!-- <%#= render @q.answers %>
+          <div id="comments">
+          <%# @post.comments.each do |comment| %>
+          <%# this will render _answer.html.erb inside views/answers folder %>
+          <%#= render "/comments/comment", comment: comment %>
+          <%# end %>
+        </div> -->
+        <% end %>
+      </div>
+    </div>
 <section>
