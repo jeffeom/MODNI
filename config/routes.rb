@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :events
+  resources :vlogs
 
   get '/about' => "home#about"
   get '/member' => "home#member"

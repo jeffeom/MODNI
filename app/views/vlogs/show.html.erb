@@ -2,19 +2,19 @@
   <img src="/assets/home.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
 </div>
 
-<section class="col-md-10 center-block" id="event-skip">
+<section class="col-md-10 center-block" id="vlog-skip">
   <div style="float: right">
-    <% if @event.next %>
-      <%= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @event.next %>
-    <% end %>
+    <%# if @vlog.next %>
+      <%#= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @vlog.next %>
+    <%# end %>
   </div>
   <div style="float: right; margin-right: 10px">
-    <% if @event.previous %>
-      <%= link_to "<i class='fa fa-arrow-left fa-3x'></i>".html_safe, @event.previous %>
-    <% end %>
+    <%# if @vlog.previous %>
+      <%#= link_to "<i class='fa fa-arrow-left fa-3x'></i>".html_safe, @vlog.previous %>
+    <%# end %>
   </div>
   <div style="float: left; padding-top: 3px">
-    <%= link_to '<i class="fa fa-th fa-3x"></i>'.html_safe, events_path %>
+    <%#= link_to '<i class="fa fa-th fa-3x"></i>'.html_safe, vlogs_path %>
   </div>
   <br>
   <br>
@@ -22,30 +22,25 @@
 </section>
 
 
-<section class="col-md-12" id="event-title">
+<section class="col-md-12" id="vlog-title">
   <div class="col-md-12" style="text-align: center; margin-bottom: 50px">
-    <h1 style="font-weight: 800; font-size: 50px"><%= @event.title %></h1>
-    <% if @event.event_date %>
-      <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @event.event_date.strftime("%A, %B %d %Y @ %I:%M%p") %></h2>
+    <h1 style="font-weight: 800; font-size: 50px"><%= @vlog.title %></h1>
+    <% if @vlog.vlog_date %>
+      <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @vlog.vlog_date.strftime("%A, %B %d %Y @ %I:%M%p") %></h2>
     <% end %>
   </div>
 </section>
 
 <section class="col-md-10 center-block" id="image-body">
-  <div class="col-md-7 text-center left">
-    <% if @event.image.present? %>
-      <%= image_tag(@event.image.url(:large), :class=> "event_image") %>
-    <% end %>
-  </div>
   <div class="col-md-3 center-block well right" style="display: inline-block;">
-    <p style="font-weight: 600; opacity: 0.8"><%= @event.body %></p>
+    <p style="font-weight: 600; opacity: 0.8"><%= @vlog.body %></p>
   </div>
   <section id="edit-delete">
     <%# if user_signed_in? && @post.user == current_user %>
-    <%= link_to "Edit", edit_event_path(@event),
+    <%= link_to "Edit", edit_vlog_path(@vlog),
         class: "btn btn-info btn-sm edit-right"%>
-    <%= link_to "Delete", event_path(@event), method: :delete,
-        class: "btn btn-danger btn-sm delete-right", data: {confirm: "Are you use you want to delete this event?"} %>
+    <%= link_to "Delete", vlog_path(@vlog), method: :delete,
+        class: "btn btn-danger btn-sm delete-right", data: {confirm: "Are you use you want to delete this vlog?"} %>
     <%# end %>
   </section>
 </section>
@@ -60,7 +55,7 @@
 
       <%#= render "/comments/form" %>
 
-      <% if @event.comments.present?%>
+      <% if @vlog.comments.present?%>
       <h2>Comments</h2>
           <!-- <%#= render @q.answers %>
           <div id="comments">

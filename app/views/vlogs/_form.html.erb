@@ -1,0 +1,10 @@
+<%= simple_form_for @vlog do |f| %>
+  <%= f.input :vlog_date %>
+  <%= f.input :title, placeholder: "at least 3 characters.." %>
+  <%= f.input :body, hint: "Put Details for the Vlog" %>
+  <%#= f.file_field :image %>
+  <%#= file_field_tag :image %>
+  <br>
+
+  <%= f.submit({class: "btn btn-primary"}) %>
+<% end %>
