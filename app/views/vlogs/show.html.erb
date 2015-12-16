@@ -4,17 +4,17 @@
 
 <section class="col-md-10 center-block" id="vlog-skip">
   <div style="float: right">
-    <%# if @vlog.next %>
-      <%#= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @vlog.next %>
-    <%# end %>
+    <% if @vlog.next %>
+      <%= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @vlog.next %>
+    <% end %>
   </div>
   <div style="float: right; margin-right: 10px">
-    <%# if @vlog.previous %>
-      <%#= link_to "<i class='fa fa-arrow-left fa-3x'></i>".html_safe, @vlog.previous %>
-    <%# end %>
+    <% if @vlog.previous %>
+      <%= link_to "<i class='fa fa-arrow-left fa-3x'></i>".html_safe, @vlog.previous %>
+    <% end %>
   </div>
   <div style="float: left; padding-top: 3px">
-    <%#= link_to '<i class="fa fa-th fa-3x"></i>'.html_safe, vlogs_path %>
+    <%= link_to '<i class="fa fa-th fa-3x"></i>'.html_safe, vlogs_path %>
   </div>
   <br>
   <br>
@@ -33,7 +33,9 @@
 
 <section class="col-md-10 center-block" id="video-body">
   <div class="col-md-7 embed-container left">
-    <%= embed(@vlog.link) %>
+    <% if @vlog.link %>
+      <%= embed(@vlog.link) %>
+    <% end %>
   </div>
   <div class="col-md-3 well right">
     <p style="font-weight: 600; opacity: 0.8"><%= @vlog.body %></p>

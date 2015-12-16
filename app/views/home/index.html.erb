@@ -59,19 +59,67 @@
     </div>
   </div>
 </section>
-<section id="events">
-  <div class="col-md-10 center-block" style="background-color: white">
-    <h2 class="text-center" style="clear: left">Some Of Our Recent Events</h2>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex   ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  id est laborum.</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex   ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut   aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum.</p>
+<section id="events" style="padding: 50px">
+  <div class="col-md-10 center-block">
+    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Our Recent Events</h2>
+    <div class="col-md-10 center-block" style="margin: 0">
+
+      <% @events.each do |event| %>
+        <div class="col-md-4 grow" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+          <div class="col-md-3 cover-left date text-center" style="display: inline-block">
+            <% if event.event_date %>
+              <p><%= event.event_date.strftime("%A %B %dth")%></p>
+            <% end %>
+          </div>
+          <div class="col-md-9 cover-right">
+            <div style="display: block; font-weight: 900">
+              <%= link_to event.title, event_path(event) %>
+            </div>
+            <hr style="margin-bottom: 0; margin-top: 30px;">
+            <br>
+          </div>
+          <div class="col-md-12 text-center">
+            <% if event.image.present? %>
+              <% image = image_tag(event.image.url(:large), :class=> "event_cover") %>
+              <%= link_to image, event_path(event) %>
+            <% else %>
+              <div class="no-image">
+                <span>Image Cannot be Found</span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </section>
-<section id="vlog">
-  <div class="col-md-10 center-block" style="background-color: white">
-    <h2 class="text-center" style="clear: left">Recent Vlog Posts</h2>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex   ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  id est laborum.</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex   ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim  id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut   aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.</p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est   laborum.</p>
+<section id="vlog" style="clear: left; padding: 50px">
+  <div class="col-md-10 center-block">
+    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlog Posts</h2>
+
+    <% @vlogs.each do |vlog| %>
+      <div class="col-md-4 grow" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+        <div class="col-md-3 cover-left date text-center" style="display: inline-block">
+          <% if vlog.vlog_date %>
+            <p><%= vlog.vlog_date.strftime("%A %B %dth")%></p>
+          <% end %>
+        </div>
+        <div class="col-md-9 cover-right">
+          <div style="display: block; font-weight: 900">
+            <%= link_to vlog.title, vlog_path(vlog) %>
+          </div>
+          <hr style="margin-bottom: 0; margin-top: 30px;">
+          <br>
+        </div>
+        <div class="col-md-12 text-center embed-container" style="float: right; margin-right: 5%">
+          <% if vlog.link.present? %>
+            <%= embed(vlog.link) %>
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
   </div>
 </section>

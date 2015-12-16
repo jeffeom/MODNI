@@ -36,3 +36,24 @@
 .right{
   width: 29%
 }
+
+#vlog-skip i{
+  color: black;
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+#vlog-skip i:hover {
+  color: rgba(239, 56, 53, 0.9);
+}
+
+.cover-left{
+  float: left;
+  width: 20%;
+}
+.cover-right{
+  float: right;
+  width: 65%;
+}

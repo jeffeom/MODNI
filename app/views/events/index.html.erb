@@ -12,11 +12,11 @@
       <!-- <div class="col-md-3 cover-left" style="color: brown; font-weight: 800"> -->
       <div class="col-md-3 cover-left date text-center" style="display: inline-block">
         <% if event.event_date %>
-          <p><%= event.event_date.strftime("%A %B %dth")%></p>
+          <p><%= event.event_date.strftime("%A, %B %dth")%></p>
         <% end %>
       </div>
       <div class="col-md-9 cover-right">
-        <div style="display: block; font-weight: 900">
+        <div style="display: block; font-weight: 900; text-align: right">
           <%= link_to event.title, event_path(event) %>
         </div>
         <!-- <hr class="b-hr"> -->
