@@ -1,0 +1,35 @@
+<div class="text-center wrapper" id="startchange">
+  <img src="/assets/vlog2_crop.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
+</div>
+
+<div class="col-md-10 center-block">
+  <div class="text-center" style="margin: 50px">
+    <a class="btn btn-lg btn-default" href="<%= new_vlog_path  %>">Create New Vlog!</a>
+  </div>
+
+  <% @vlogs.order("created_at DESC").each do |vlog| %>
+    <div class="col-md-4 grow" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+      <div class="col-md-3 cover-left date text-center" style="display: inline-block">
+        <% if vlog.vlog_date %>
+          <p><%= vlog.vlog_date.strftime("%A %B %dth")%></p>
+        <% end %>
+      </div>
+      <div class="col-md-9 cover-right">
+        <div style="display: block; font-weight: 900">
+          <%= link_to vlog.title, vlog_path(vlog) %>
+        </div>
+        <!-- <hr class="b-hr"> -->
+        <hr style="margin-bottom: 0; margin-top: 30px;">
+        <br>
+      </div>
+      <div class="col-md-12 text-center embed-container" style="float: right; margin-right: 5%">
+        <% if vlog.link %>
+          <%= embed(vlog.link) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="text-center" style="clear: both">
+    <%= paginate @vlogs %>
+  </div>
+</div>

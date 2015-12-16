@@ -1,0 +1,9 @@
+<%= simple_form_for @vlog do |f| %>
+  <%= f.input :vlog_date %>
+  <%= f.input :title, placeholder: "at least 3 characters.." %>
+  <%= f.input :body, hint: "Put Details for the Vlog" %>
+  <%= f.input :link, hint: "Put Youtube Link for the Vlog" %>
+  <br>
+
+  <%= f.submit({class: "btn btn-primary"}) %>
+<% end %>

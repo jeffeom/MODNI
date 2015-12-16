@@ -1,6 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-left{
+  color: white;
+}
+
+#footer ul li a{
+  color: white;
+  transition: 0.5s;
+}
+#footer ul li a:hover{
+  color: grey;
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+  background-color: transparent;
+}
+
+.footer{
+  background-color: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 140px;
+}
 
 ul {
     overflow: auto;
@@ -139,7 +160,7 @@ ul li a i:hover {
 }
 
 .padPin{
-  padding: 15px;
+  padding: 100px;
 }
 
 .fWhite{
