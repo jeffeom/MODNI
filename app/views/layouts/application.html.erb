@@ -14,14 +14,17 @@
         <br>
         <%= render "/layouts/flash_messages" %>
         <%= render "/layouts/footer" %>
-        <a class="posLogo" href="/#page-top">
+        <a class="posLogo" onclick="$('#startchange').animatescroll({scrollSpeed:2000,easing:'easeOutBounce'});">
           <img alt="Brand" src="/assets/circle_logo.png" class="logoBot">
         </a>
       </div>
     </body>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" type="text/css" href="/assets/animate.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="/assets/jquery.nicescroll.min.js"></script>
+    <script src="/assets/animatescroll.min.js"></script>
+    <script src="/assets/viewportchecker.js"></script>
     <script>
     $(document).ready(
       function() {
@@ -43,6 +46,22 @@
           $('#mainNav').removeClass("affix");
         }
       });
+      $('.post1').addClass("not-visible").viewportChecker({
+          classToAdd: 'visible animated bounceInLeft',
+          offset: 50
+         });
+      $('.post2').addClass("not-visible").viewportChecker({
+          classToAdd: 'visible animated bounceInUp',
+          offset: 50
+         });
+      $('.post3').addClass("not-visible").viewportChecker({
+          classToAdd: 'visible animated bounceInRight',
+          offset: 50
+         });
+      $('.button').addClass("not-visible").viewportChecker({
+          classToAdd: 'visible animated tada',
+          offset: 50
+         });
     });
     </script>
     <script src="https://www.google.com/jsapi"></script>

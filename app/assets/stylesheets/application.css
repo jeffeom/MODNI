@@ -17,6 +17,14 @@
 
  @import "font-awesome";
 
+.not-visible{
+  opacity: 0;
+}
+
+.visible{
+  opacity: 1;
+}
+
  .my-fluid-container {
    padding-left: 0;
    padding-right: 0;
