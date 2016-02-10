@@ -50,27 +50,3 @@
     <%# end %>
   </section>
 </section>
-
-<section id="comments" style="clear: both; display: block">
-  <div class="col-md-10 center-block">
-    <div style="clear: left">
-      <br>
-      <br>
-      <hr>
-      <h2>Leave a Comment</h2>
-
-      <%#= render "/comments/form" %>
-
-      <% if @vlog.comments.present?%>
-      <h2>Comments</h2>
-          <!-- <%#= render @q.answers %>
-          <div id="comments">
-          <%# @post.comments.each do |comment| %>
-          <%# this will render _answer.html.erb inside views/answers folder %>
-          <%#= render "/comments/comment", comment: comment %>
-          <%# end %>
-        </div> -->
-        <% end %>
-      </div>
-    </div>
-</section>

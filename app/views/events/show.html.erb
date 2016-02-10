@@ -31,7 +31,7 @@
   </div>
 </section>
 
-<section class="col-md-10 center-block" id="image-body">
+<section class="col-md-10 center-block" id="image-body" style="margin-bottom: 100px;">
   <div class="col-md-7 text-center left">
     <% if @event.image.present? %>
       <%= image_tag(@event.image.url(:large), :class=> "event_image") %>
@@ -48,28 +48,4 @@
         class: "btn btn-danger btn-sm delete-right", data: {confirm: "Are you use you want to delete this event?"} %>
     <%# end %>
   </section>
-</section>
-
-<section id="comments">
-  <div class="col-md-10 center-block">
-    <div style="clear: left">
-      <br>
-      <br>
-      <hr>
-      <h2>Leave a Comment</h2>
-
-      <%#= render "/comments/form" %>
-
-      <% if @event.comments.present?%>
-      <h2>Comments</h2>
-          <!-- <%#= render @q.answers %>
-          <div id="comments">
-          <%# @post.comments.each do |comment| %>
-          <%# this will render _answer.html.erb inside views/answers folder %>
-          <%#= render "/comments/comment", comment: comment %>
-          <%# end %>
-        </div> -->
-        <% end %>
-      </div>
-    </div>
 </section>
