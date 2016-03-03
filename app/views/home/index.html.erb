@@ -1,11 +1,12 @@
 <div class="text-center wrapper" id="startchange">
   <img src="assets/about us.png" alt="Home" width="100%" style="float: none" class="img">
-  <div class="textinpic">
+  <div class="col-md-10 textinpic">
+    <div style="float: left; width: 50%;">
     <h2> The Birth of a New Culture </h2>
     <p>
-      Modni is a branch of the Fraser Valley Korean Art Society that focuses <br>on bringing awareness to the issue of bicultural identity, namely Korean <br>Canadian identity, using various forms of art.<br /><br>
-      At present, Modni consists of a performance team specializing in<br> playing Korean drums that has performed at numerous locations <Br>throughout the Greater Vancouver Area, as well as a budding <br>media team and administrative team.
+      Modni is a branch of the Fraser Valley Korean Art Society that focuses on bringing awareness to the issue of bicultural identity, namely Korean Canadian identity, using various forms of art. At present, Modni consists of a performance team specializing in playing Korean drums that has performed at numerous locations throughout the Greater Vancouver Area, as well as a budding media team and administrative team.
     </p>
+    </div>
   </div>
 </div>
 <section id="about" style="background-color: rgba(0,0,0,0.8); color: white;">
@@ -88,7 +89,7 @@
       <p style="display: inline-block; font-size: 15px; margin-top: 8%" class="fWhite">Half of Modni is to reach out to the public domain via art; the other half is entirely internal. Involving all talents is our method of building a community that will allow us to share our past experiences whilst creating new ones. To bridge our 2nd generation, Korean-Canadian, community with the 1st generation community, we must first understand our own culture and see where our differences lie.</p>
     </div>
     <div class="text-center">
-      <a class="btn btn-lg btn-default button" href="<%= about_path  %>" style="margin-top: 5%;">Sign Up Now !</a>
+      <a class="btn btn-lg btn-default button" href="http://fvkas.com/contact-us/" style="margin-top: 5%;">Sign Up Now !</a>
       <br>
       <br>
     </div>
@@ -124,14 +125,12 @@
 <% if @events.present? %>
 <section id="events" style="padding: 50px">
   <div class="col-md-10 center-block">
-      <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
-    <div class="col-md-10 center-block post1" style="margin: 0">
-
-      <% @events.each do |event| %>
-        <div class="col-md-4 grow" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
+      <% @events.first(2).each do |event| %>
+        <div class="col-md-6 grow post1" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
           <div class="col-md-3 cover-left date text-center" style="display: inline-block">
             <% if event.event_date %>
-              <p><%= event.event_date.strftime("%A %B %dth")%></p>
+              <p><%= event.event_date.strftime("%B %dth")%></p>
             <% end %>
           </div>
           <div class="col-md-9 cover-right">
@@ -155,19 +154,18 @@
       <% end %>
     </div>
   </div>
-  <% end %>
 </section>
+<% end %>
 
 <% if @vlogs.present? %>
 <section id="vlog" style="clear: left; padding: 50px">
   <div class="col-md-10 center-block">
       <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlogs</h2>
-    <% end %>
-    <% @vlogs.each do |vlog| %>
-      <div class="col-md-4 grow post2" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+    <% @vlogs.first(2).each do |vlog| %>
+      <div class="col-md-6 grow post2" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
         <div class="col-md-3 cover-left date text-center" style="display: inline-block">
           <% if vlog.vlog_date %>
-            <p><%= vlog.vlog_date.strftime("%A %B %dth")%></p>
+            <p><%= vlog.vlog_date.strftime("%B %dth")%></p>
           <% end %>
         </div>
         <div class="col-md-9 cover-right">
@@ -183,7 +181,7 @@
           <% end %>
         </div>
       </div>
+    <% end %>
   </div>
-  </div>
-  <% end %>
 </section>
+<% end %>
