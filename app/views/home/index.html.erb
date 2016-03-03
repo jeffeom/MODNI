@@ -67,7 +67,7 @@
     </div>
   </div>
 </section> -->
-<section style="text-align: center" id="core-concepts">
+<section style="text-align: center; margin-bottom: 0;" id="core-concepts">
   <div class="padPin" style="background-color: rgba(158,11,15,1); width: 100%">
     <h2 class="text-center fWhite" style="font-size: 50px; font-weight: 900">Core Concepts</h2>
     <hr class="hr fW" style="margin-top: 15px; margin-bottom: 80px">
@@ -120,9 +120,11 @@
     </div>
   </div>
 </section> -->
+
+<% if @events.present? %>
 <section id="events" style="padding: 50px">
   <div class="col-md-10 center-block">
-    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
+      <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
     <div class="col-md-10 center-block post1" style="margin: 0">
 
       <% @events.each do |event| %>
@@ -150,15 +152,17 @@
             <% end %>
           </div>
         </div>
-
       <% end %>
     </div>
   </div>
+  <% end %>
 </section>
+
+<% if @vlogs.present? %>
 <section id="vlog" style="clear: left; padding: 50px">
   <div class="col-md-10 center-block">
-    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlogs</h2>
-
+      <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlogs</h2>
+    <% end %>
     <% @vlogs.each do |vlog| %>
       <div class="col-md-4 grow post2" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
         <div class="col-md-3 cover-left date text-center" style="display: inline-block">
@@ -179,8 +183,7 @@
           <% end %>
         </div>
       </div>
-
-    <% end %>
   </div>
   </div>
+  <% end %>
 </section>
