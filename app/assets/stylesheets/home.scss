@@ -14,24 +14,38 @@
 // }
 
 #startchange{
-  margin-bottom: 0;
+  // margin-bottom: 0;
+  // position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  // background: url("https://images.unsplash.com/photo-1437357380186-d84494521acb?dpr=2&fit=crop&fm=jpg&h=725&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1300");
+  background: url("/assets/about us.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  padding: 0;
 }
 
 #startchange img{
-  position: relative;
-  margin-bottom: 0;
-  height: 100%;
+  // position: relative;
+  // margin-bottom: 0;
+  // height: 100%;
   // left: 15%;
 }
 
 #startchange .textinpic{
-  position: absolute;
-  bottom: 5%;
-  padding-bottom: 2%;
-  padding-left: 10%;
-  padding-top: 2%;
+  // position: absolute;
+  // bottom: 0;
+  // padding-bottom: 2%;
+  // padding-left: 10%;
+  // padding-top: 2%;
   color: white;
+  vertical-align: bottom;
   text-align: left;
+  padding-left: 5%;
+  padding-bottom: 5%;
   h2{
     font-weight: bold;
     margin-bottom: 2%;
