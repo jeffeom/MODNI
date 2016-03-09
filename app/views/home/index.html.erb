@@ -127,7 +127,7 @@
 <section id="events" class="col-md-10 center-block" style="padding: 50px">
   <div class="center-block">
     <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
-      <% @events.first(2).each do |event| %>
+      <% @events.order("created_at desc").first(2).each do |event| %>
         <div class="col-md-6 grow post1" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
           <div class="col-md-3 cover-left date text-center" style="display: inline-block">
             <% if event.event_date %>
@@ -162,7 +162,7 @@
 <section id="vlog" class="col-md-10 center-block" style="clear: left; padding: 50px; margin-bottom: 5%;">
   <div class="center-block">
       <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlogs</h2>
-    <% @vlogs.first(2).each do |vlog| %>
+    <% @vlogs.order("created_at desc").first(2).each do |vlog| %>
       <div class="col-md-6 grow post2" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10%;">
         <div class="col-md-3 cover-left date text-center" style="display: inline-block">
           <% if vlog.vlog_date %>

@@ -274,7 +274,6 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99)
-    mini_magick (4.3.6)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
@@ -341,6 +340,7 @@ GEM
     ref (2.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.15.4)
     ruby-graphviz (1.2.2)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -428,11 +428,11 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   letter_opener
-  mini_magick
   pg
   quiet_assets
   rails (= 4.2.4)
   rails-erd
+  rmagick
   sass (~> 3.4, >= 3.4.19)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -445,4 +445,4 @@ DEPENDENCIES
   youtube_it
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
