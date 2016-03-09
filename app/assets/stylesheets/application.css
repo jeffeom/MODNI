@@ -43,19 +43,16 @@
     left: 95%;
   }
 }
-
 @media(max-width:2000px){
   .posLogo{
     left: 93%;
   }
 }
-
 @media(max-width:1500px){
   .posLogo{
     left: 91%;
   }
 }
-
 @media(max-width:1300px){
   .posLogo{
     left: 90%;
@@ -86,6 +83,17 @@
     left: 77%;
   }
 }
+@media(max-width:450px){
+  .posLogo{
+    left: 72%;
+  }
+}
+@media(max-width:400px){
+  .posLogo{
+    left: 66%;
+  }
+}
+
 @media(min-height:0px){
   .posLogo{
     top: 78%;

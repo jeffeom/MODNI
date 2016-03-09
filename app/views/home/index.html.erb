@@ -1,8 +1,9 @@
 <div class="text-center wrapper" id="startchange">
   <section id="pic" style="display: table">
-    <div class="col-md-10 col-xs-10 textinpic center-block" style="display: table-cell">
+    <div class="textinpic center-block" style="display: table-cell; padding: 5%;">
       <div style="float: left; width: 50%;">
         <h2> The Birth of a New Culture </h2>
+        <br />
         <p>
           Modni is a branch of the Fraser Valley Korean Art Society that focuses on bringing awareness to the issue of   bicultural identity, namely Korean Canadian identity, using various forms of art. At present, Modni consists of   a performance team specializing in playing Korean drums that has performed at numerous locations throughout the Greater Vancouver Area, as well as a budding media team and administrative team.
         </p>
@@ -11,10 +12,7 @@
   </section>
 </div>
 <section id="about" style="background-color: rgba(0,0,0,0.8); color: white;">
-  <div class="center-block col-md-10 col-xs-10">
-    <br />
-    <br />
-    <br />
+  <div class="center-block col-md-10" style="padding-top: 5%; padding-bottom: 5%;">
     <h1 class="text-center" style="font-size: 50px; margin-top: 0; margin-bottom: 2%;">Our Mission</h1>
     <hr class="hr fW" style="margin-top: 15px; margin-bottom: 20px;">
     <div class="post2">
@@ -23,13 +21,9 @@
       </h4>
     </div>
     <div class="text-center">
-      <h2 class="post1" style="display: inline-block; margin-top: 60px">Want to learn more about us?<br />Press the button below.
+      <h2 class="post1" style="margin-top: 6%; margin-bottom: 6%;">Want to learn more about us?<br />Press the button below.
       </h2>
-      <br>
-      <br>
-      <a class="btn btn-lg btn-danger button" style="margin-bottom: 60px;" href="<%= about_path  %>">About Us !</a>
-      <br>
-      <br>
+      <a class="btn btn-lg btn-danger button" style="margin-bottom: 20px;" href="<%= about_path  %>">About Us !</a>
     </div>
   </div>
 </section>
@@ -69,14 +63,14 @@
     </div>
   </div>
 </section> -->
-<section style="text-align: center; margin-bottom: 0;" id="core-concepts">
-  <div class="padPin" style="background-color: rgba(158,11,15,1); width: 100%">
-    <h2 class="text-center fWhite" style="font-size: 50px; font-weight: 900">Core Concepts</h2>
+<section id="core-concepts" style="background-color: rgba(158,11,15,1);">
+  <div class="center-block col-md-10" style="text-align: center; padding-top: 5%;">
+    <h1 class="fWhite" style="margin-top: 0;">Core Concepts</h2>
     <hr class="hr fW">
-    <h3 class="fWhite" style="font-size: 18px; margin-bottom: 10%;">
+    <h4 class="fWhite" style="margin-bottom: 10%;">
       At its core, Modni is essentially a thought experiment. We do not know exacty what we are looking for when we say “Korean-Canadian” culture, yet through these means, we hope to find any semblance of an answer.
     </h3>
-    <div class="col-md-4 text-center post1" style="vetrical-align: top">
+    <div class="col-md-4 text-center post2" style="vetrical-align: top">
       <i class="fa fa-circle-o-notch fa-spin fa-3x fWhite"></i>
       <h3 class="fWhite" style="font-size: 25px; font-weight: 600">Arts</h3>
       <p style="display: inline-block; font-size: 15px; margin-top: 5%; margin-bottom: 8%;" class="fWhite">We have chosen art as our form of reflection and meditation on our experiences because of its expressive quality. At the forefront we have Korean traditional drumming fused with Western rhythms and instruments and soon will be working with videography as well. A multitude of art forms will be introduced as the year progresses.</p>
@@ -84,12 +78,12 @@
       <i class="fa fa-gear fa-spin fa-3x fWhite"></i>
       <h3 class="fWhite" style="font-size: 25px; font-weight: 600">Cultural Identity</h3>
       <p style="display: inline-block; font-size: 15px; margin-top: 5%; margin-bottom: 8%" class="fWhite">If one were to define identity simply as a culmination of experience, then to understand one’s identity, we would need to reflect on our past experiences. In the case of cultural identity then, we would need to understand the experiences of those who also share our culture. Modni strives to be this connection.</p>
-    </div><div class="col-md-4 text-center post3" style="vetrical-align: top">
+    </div><div class="col-md-4 text-center post2" style="vetrical-align: top">
       <i class="fa fa-refresh fa-spin fa-3x fWhite"></i>
       <h3 class="fWhite" style="font-size: 25px; font-weight: 600">Community</h3>
       <p style="display: inline-block; font-size: 15px; margin-top: 5%; margin-bottom: 8%;" class="fWhite">Half of Modni is to reach out to the public domain via art; the other half is entirely internal. Involving all talents is our method of building a community that will allow us to share our past experiences whilst creating new ones. To bridge our 2nd generation, Korean-Canadian, community with the 1st generation community, we must first understand our own culture and see where our differences lie.</p>
     </div>
-    <div class="text-center">
+    <div class="text-center" style="padding-bottom: 20px;">
       <a class="btn btn-lg btn-default button" href="http://fvkas.com/contact-us/" style="margin-top: 5%;">Sign Up Now !</a>
       <br>
       <br>
@@ -124,11 +118,11 @@
 </section> -->
 
 <% if @events.present? %>
-<section id="events" class="col-md-10 center-block" style="padding: 50px">
-  <div class="center-block">
-    <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Events</h2>
+<section id="events">
+  <div class="col-md-10 center-block">
+    <h2 style="clear: left; padding-top: 5%; margin-bottom: 10%; text-align:center; font-size: 50px; font-weight: 900">Recent<br />Events</h2>
       <% @events.order("created_at desc").first(2).each do |event| %>
-        <div class="col-md-6 grow post1" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10px;">
+        <div class="col-md-6 grow post1" style="padding: 10px; height: 400px; margin-right: 0px;">
           <div class="col-md-3 cover-left date text-center" style="display: inline-block">
             <% if event.event_date %>
               <p><%= event.event_date.strftime("%B %dth")%></p>
@@ -158,12 +152,11 @@
 <% end %>
 
 <% if @vlogs.present? %>
-
-<section id="vlog" class="col-md-10 center-block" style="clear: left; padding: 50px; margin-bottom: 5%;">
-  <div class="center-block">
-      <h2 class="text-center" style="clear: left; padding: 80px; font-size: 50px; font-weight: 900">Recent Vlogs</h2>
+<section id="vlog"style="clear: left; margin-bottom: 5%;">
+  <div class="col-md-10 center-block">
+    <h2 style="clear: left; padding-top: 5%; margin-bottom: 10%; font-size: 50px; font-weight: 900; text-align: center">Recent<br />Vlogs</h2>
     <% @vlogs.order("created_at desc").first(2).each do |vlog| %>
-      <div class="col-md-6 grow post2" style="padding: 10px; height: 400px; margin-right: 0px; margin-bottom: 10%;">
+      <div class="col-md-6 grow post2" style="height: 350px; margin-right: 0px; margin-bottom: 10%;">
         <div class="col-md-3 cover-left date text-center" style="display: inline-block">
           <% if vlog.vlog_date %>
             <p><%= vlog.vlog_date.strftime("%B %dth")%></p>
