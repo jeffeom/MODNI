@@ -2,7 +2,7 @@
   <img src="/assets/vlog2_crop.jpg" alt="Home" width="100%" style="display: inline-block" class="img">
 </div>
 
-<section class="col-md-10 center-block" id="vlog-skip">
+<section class="col-md-10 center-block" id="vlog-skip" style="margin-top: 5%;">
   <div style="float: right">
     <% if @vlog.next %>
       <%= link_to "<i class='fa fa-arrow-right fa-3x'></i>".html_safe, @vlog.next %>
@@ -23,7 +23,7 @@
 
 
 <section id="vlog-title">
-  <div class="col-md-12" style="text-align: center; margin-bottom: 50px">
+  <div class="col-md-10 center-block" style="text-align: center; margin-bottom: 50px">
     <h1 style="font-weight: 800; font-size: 50px"><%= @vlog.title %></h1>
     <% if @vlog.vlog_date %>
       <h2 style="font-weight: 600; color: red; opacity: 0.8; font-size: 20px"><%= @vlog.vlog_date.strftime("%A, %B %d %Y") %></h2>
@@ -32,7 +32,7 @@
 </section>
 
 <section class="col-md-10 center-block" id="video-body">
-  <div class="col-md-7 embed-container left">
+  <div class="col-md-7 embed-container left" style="margin-bottom: 10%;">
     <% if @vlog.link %>
       <%= embed(@vlog.link) %>
     <% end %>
