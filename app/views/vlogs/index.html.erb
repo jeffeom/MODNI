@@ -8,7 +8,7 @@
   </div>
 
   <% @vlogs.order("created_at DESC").each do |vlog| %>
-    <div class="col-md-4 grow" style="padding: 10px; margin-right: 10px; clear: right">
+    <div class="col-md-4 col-xs-12 grow" style="padding: 10px; clear: right">
       <div class="col-md-3 cover-left date text-center" style="display: inline-block">
         <% if vlog.vlog_date %>
           <p><%= vlog.vlog_date.strftime("%A, %B %dth")%></p>
@@ -22,7 +22,7 @@
         <hr style="margin-bottom: 0; margin-top: 30px;">
         <br>
       </div>
-      <div class="col-md-12 text-center embed-container" style="display: inline-block; float: right; margin-right: 5%; margin-bottom: 20%">
+      <div class="col-md-10 col-xs-12 text-center embed-container-index" style="display: inline-block; margin-right: 5%; margin-bottom: 5%">
         <% if vlog.link %>
           <%= embed(vlog.link) %>
         <% end %>
