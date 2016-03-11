@@ -12,7 +12,7 @@
   </section>
 </div>
 <section id="about" style="background-color: rgba(0,0,0,0.8); color: white;">
-  <div class="center-block col-md-10" style="padding-top: 5%; padding-bottom: 5%;">
+  <div class="center-block col-md-10 padding">
     <h1 class="text-center" style="font-size: 50px; margin-top: 0; margin-bottom: 2%;">Our Mission</h1>
     <hr class="hr fW" style="margin-top: 15px; margin-bottom: 20px;">
     <div class="post2">
@@ -156,7 +156,7 @@
   <div class="col-md-10 center-block">
     <h2 style="clear: left; padding-top: 5%; margin-bottom: 10%; font-size: 50px; font-weight: 900; text-align: left"><i class="fa fa-video-camera"></i> Vlogs</h2>
     <% @vlogs.order("created_at desc").first(2).each do |vlog| %>
-      <div class="col-md-6 grow post2" style="height: 350px; margin-right: 0px; margin-bottom: 10%;">
+      <div class="col-md-6 grow post2" style="margin-right: 0px; margin-bottom: 10%; clear: right">
         <div class="col-md-3 cover-left date text-center" style="display: inline-block">
           <% if vlog.vlog_date %>
             <p><%= vlog.vlog_date.strftime("%B %dth")%></p>

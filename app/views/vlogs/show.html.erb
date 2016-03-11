@@ -32,21 +32,23 @@
 </section>
 
 <section class="col-md-10 center-block" id="video-body">
-  <div class="col-md-7 embed-container left" style="margin-bottom: 10%;">
+  <div class="col-md-8 col-xs-12 embed-container" style="margin-bottom: 5%;">
     <% if @vlog.link %>
       <%= embed(@vlog.link) %>
     <% end %>
   </div>
-  <div class="col-md-3 well right">
-    <p style="font-weight: 600; opacity: 0.8"><%= @vlog.body %></p>
-    <br>
-  </div>
-  <section id="edit-delete" class="col-md-3 right" style="padding: 0">
-    <%# if user_signed_in? && @post.user == current_user %>
-    <%= link_to "Edit", edit_vlog_path(@vlog),
-        class: "btn btn-info btn-sm edit-right"%>
-    <%= link_to "Delete", vlog_path(@vlog), method: :delete,
-        class: "btn btn-danger btn-sm delete-right", data: {confirm: "Are you use you want to delete this vlog?"} %>
-    <%# end %>
+  <section style="text-align: right">
+    <div class="col-md-4 col-xs-12 well" style="text-align: left">
+      <p style="font-weight: 600; opacity: 0.8; display: inline-block;"><%= @vlog.body %></p>
+      <br>
+    </div>
+    <section id="edit-delete" style="margin-bottom: 10%;">
+      <%# if user_signed_in? && @post.user == current_user %>
+      <%= link_to "Edit", edit_vlog_path(@vlog),
+          class: "btn btn-info btn-sm edit-right"%>
+      <%= link_to "Delete", vlog_path(@vlog), method: :delete,
+          class: "btn btn-danger btn-sm delete-right", data: {confirm: "Are you use you want to delete this vlog?"} %>
+      <%# end %>
+    </section>
   </section>
 </section>

@@ -16,7 +16,7 @@
         <% end %>
       </div>
       <div class="col-md-9 cover-right">
-        <div style="display: block; font-weight: 900; text-align: right">
+        <div style="display: block; font-weight: 900; text-align: left;">
           <%= link_to event.title, event_path(event) %>
         </div>
         <!-- <hr class="b-hr"> -->
@@ -29,7 +29,7 @@
           <%= link_to image, event_path(event) %>
         <% else %>
           <div class="no-image">
-            <span>Image Cannot be Found</span>
+            <span><%= link_to "Image not found", event_path(event) %> </span>
           </div>
         <% end %>
       </div>
