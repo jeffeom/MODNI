@@ -28,6 +28,10 @@
 //   padding: 0;
 // }
 
+h1, h2, h3, h4, .btn,  p, a {
+  font-family: 'Crete Round', serif;
+}
+
 body, html, main {
   height: 100%;
 }
@@ -220,6 +224,16 @@ ul li a i:hover {
 .padPin{
   padding: 100px;
   // padding-bottom: 0;
+}
+
+.margin{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.padding{
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 .fWhite{
